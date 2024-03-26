@@ -71,17 +71,40 @@ h2 {
 
 .addTodoButton {
   background-color: #25273c;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
   color: white;
   outline: none;
   border: none;
   cursor: pointer;
 }
 
+.addCross {
+  transform: rotate(45deg);
+}
+
 .listContainer {
   margin-top: 3rem;
+  height: clamp(10vh, 50vh, 60vh);
+  overflow-y: scroll;
+  /* scrollbar-width: none; */
+}
+
+.listContainer::-webkit-scrollbar {
+  margin-left: 10px;
+  border-radius: 10px;
+  width: 6px;
+  background-color: hsl(237, 14%, 26%);
+}
+
+.listContainer::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10px;
 }
 
 .todoListItem {
+  position: relative;;
   height: 70px;
   display: flex;
   align-items: center;
@@ -89,6 +112,12 @@ h2 {
   color: white;
   padding-left: 5px;
   outline-color: white;
+  justify-content: space-between;
+}
+
+.taskTextContainer {
+  display: flex;
+  align-items: center;
 }
 
 .completed {
@@ -96,5 +125,20 @@ h2 {
 }
 
 .todoListText {
-  padding-left: 5px;
+  padding-left: 10px;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  height: 1.1rem;
+  width: 1.1rem;
+  background-color: red;
+}
+
+.deleteButton {
+  cursor: pointer;
+}
+
+.delIcon {
+  padding-right: 15px;
 }

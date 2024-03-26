@@ -1,6 +1,44 @@
+import { useEffect, useState } from 'react';
 import './App.css';
+import TodoListItem from './todoListItem';
+
 
 function App() {
+
+  const [taskArray, setTaskArray] = useState([]);
+  const [taskText, setTaskText] = useState("");
+
+  useEffect(() => {
+    const savedTasks = localStorage.getItem('tasks');
+    if (savedTasks) {
+      setTaskArray(JSON.parse(savedTasks));
+    }
+  }, []);
+
+  const addTask = () => {
+    const newTaskArray = [...taskArray, taskText];
+    setTaskArray(newTaskArray)
+    setTaskText("");
+    localStorage.setItem('tasks', JSON.stringify(newTaskArray));
+  };
+
+  const deleteTask = (id) => {
+    setTaskArray(prevValue => {
+      const updatedTasks = prevValue.filter((item, index) => {
+        return index !== id;
+      });
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+      return updatedTasks;
+    })
+  }
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      addTask();
+    }
+  }
+
+
   return (
     <div className="app">
       <div className="headerImage">
@@ -14,30 +52,18 @@ function App() {
             </div>
             <div className="listBody">
               <div className="addNewTask">
-                <input type="text" name="todo" className="todoInput" id="todo" placeholder="Create a new todo..." />
-                <button className="addTodoButton" type="button">Add</button>
+                <input type="text" name="todo" className="todoInput" id="todo" autoFocus autoCapitalize='words' placeholder="Create a new todo..." autoComplete='off' value={taskText.charAt(0).toUpperCase() + taskText.slice(1)} onChange={(event) => setTaskText(event.target.value)} onKeyDown={handleKeyDown} />
+                {/* <button className="addTodoButton" type="button" onClick={addTask}>Add</button> */}
+                <div className="addTodoButton" onClick={addTask}>
+                <svg className="addCross" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>
+                </div>
               </div>
               <div className="listContainer">
-                <div className="todoListItem">
-                  <input type="radio" name="completeMarker1" className="completed" />
-                  <p className="todoListText">Go to the gym today</p>
-                </div>
-                <div className="todoListItem">
-                  <input type="radio" name="completeMarker2" className="completed" />
-                  <p className="todoListText">Pick up some groceries</p>
-                </div>
-                <div className="todoListItem">
-                  <input type="radio" name="completeMarker3" className="completed" />
-                  <p className="todoListText">Get the car from the mechanic</p>
-                </div>
-                <div className="todoListItem">
-                  <input type="radio" name="completeMarker4" className="completed" />
-                  <p className="todoListText">Drop off the tablet at the technicians</p>
-                </div>
-                <div className="todoListItem">
-                  <input type="radio" name="completeMarker5" className="completed" />
-                  <p className="todoListText">Wash the dishes</p>
-                </div>
+                {taskArray.map((task, index) => {
+                  return (
+                    <TodoListItem key={index} id={index} text={task} delete={deleteTask} />
+                  );
+                })}
               </div>
             </div>
           </div>
