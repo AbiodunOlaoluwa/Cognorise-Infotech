@@ -19,10 +19,6 @@ function App() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem('tasks', JSON.stringify(taskArray));
-  // }, [taskArray])
-
   const addTask = () => {
     if (taskText.trim() !== "") {
       const newTaskArray = [...taskArray, { text: taskText, completed: false }];
