@@ -146,4 +146,5 @@ input[type="checkbox"] {
 
 .strikeOver {
   text-decoration: line-through;
+  color: hsl(233, 14%, 35%);
 }
