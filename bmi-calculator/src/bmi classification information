@@ -1,0 +1,7 @@
+BMI less than 18.5 falls within the underweight range
+BMI 18.5 - <25 falls within the healthy weight range
+BMI 25.0 - <30 falls within the overweight range
+BMI >= 30 falls within the obesity range
+
+
+Body Mass Index (BMI) is a person's weight in kilograms divided by the square of height in meters. A high BMI can indicate high body fatness.
