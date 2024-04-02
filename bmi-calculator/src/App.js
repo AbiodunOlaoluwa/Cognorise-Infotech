@@ -23,13 +23,14 @@ function App() {
               <p className="pText">Better understand your weight in relation to your height using our body mass index (BMI) calculator. While BMI is not the sole determinant of a healthy weight, it offers a valuable starting point to evaluate your overall health and well-being.</p>
             </div>
           </div>
-          <div className="inputFormContainer">
-            <div className="inputFormHeader">
-              <p className="inputFormHeaderText">Enter your details below</p>
+          { unitType === "metric" ? 
+          <div className="metricInputFormContainer">
+            <div className="metricInputFormHeader">
+              <p className="metricInputFormHeaderText">Enter your details below</p>
             </div>
-            <div className="inputOptions">
+            <div className="metricInputOptions">
               <div className="metricOptionRadio">
-                <input type="radio" name="measurementUnit" id="metricRadio" onClick={() => setUnitType("metric")} />
+                <input type="radio" name="measurementUnit" id="metricRadio" checked onClick={() => setUnitType("metric")} />
                 <label className='radioButtonLabel' htmlFor='metricRadio'>Metric</label>
               </div>
               <div className="imperialOptionRadio">
@@ -37,24 +38,22 @@ function App() {
                 <label className='radioButtonLabel' htmlFor='imperialRadio'>Imperial</label>
               </div>
             </div>
-            {unitType === "metric" ?            
-             <div className="metricInputFields">
+            <div className="metricInputFields">
               <div className="metricHeightInputField">
-                <label className='inputFieldsLabel' htmlFor="heightInput">Height</label>
-                <div className="inputContainer">
+                <label className='metricInputFieldsLabel' htmlFor="heightInput">Height</label>
+                <div className="metricInputContainer">
                   <input type="number" name="height" id="heightInput" autoComplete='off' placeholder='0' />
                   <p className="heightInputAfterText">cm</p>
                 </div>
               </div>
               <div className="metricWeightInputField">
-                <label className='inputFieldsLabel' htmlFor="weightInput">Weight</label>
-                <div className="inputContainer">
+                <label className='metricInputFieldsLabel' htmlFor="weightInput">Weight</label>
+                <div className="metricInputContainer">
                   <input type="number" name="weight" id="weightInput" autoComplete='off' placeholder='0' />
                   <p className="weightInputAfterText">kg</p>
                 </div>
               </div>
-            </div> : null}
-
+            </div>
             <div className="outputContainer">
               <div className="bmiResult">
                 <div className="textPreface">
@@ -68,7 +67,64 @@ function App() {
                 <p>Your BMI suggests you're a healthy weight. Your ideal weight is between <span className="idealWeight">63.3kgs - 85.2kgs</span></p>
               </div>
             </div>
-          </div>
+          </div> : 
+          <div className="imperialInputFormContainer">
+            <div className="imperialInputFormHeader">
+              <p className="imperialInputFormHeaderText">Enter your details below</p>
+            </div>
+            <div className="imperialInputOptions">
+              <div className="metricOptionRadio">
+                <input type="radio" name="measurementUnit" id="metricRadio" onClick={() => setUnitType("metric")} />
+                <label htmlFor="metricRadio" className="radioButtonLabel">Metric</label>
+              </div>
+              <div className="imperialOptionRadio">
+                <input type="radio" name="measurementUnit" id="imperialRadio" checked onClick={() => setUnitType("imperial")} />
+                <label htmlFor="imperialRadio" className="radioButtonLabel">Imperial</label>
+              </div>
+            </div>
+            <div className="imperialInputFields">
+              <div className="imperialHeightInputFields">
+                <label htmlFor="heightFeet" className="imperialInputFieldsLabel">Height</label>
+                <div className="imperialHeightInputFieldsContainer">
+                <div className="heightFeetInputContainer">
+                  <input type="number" name="heightFeet" id="heightFeet" autoComplete='off' placeholder='0' />
+                  <p className="heightFeetInputAfterText">ft</p>
+                </div>
+                <div className="heightInchesInputContainer">
+                  <input type="number" name="heightInches" id="heightInches" autoComplete='off' placeholder='0' />
+                  <p className="heightInchesInputAfterText">in</p>
+                </div>
+                </div>
+              </div>
+              <div className="imperialWeightInputFields">
+                <label htmlFor="weightStone" className="imperialInputFieldsLabel">Weight</label>
+                <div className="imperialWeightInputFieldsContainer">
+                <div className="weightStoneInputContainer">
+                  <input type="number" name="weightStone" id="weightStone" autoComplete='off' placeholder='0' />
+                  <p className="weightStoneInputAfterText">st</p>
+                </div>
+                <div className="weightPoundsInputContainer">
+                  <input type="number" name="weightPounds" id="weightPounds" autoComplete='off' placeholder='0' />
+                  <p className="weightPoundsInputAfterText">lbs</p>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div className="outputContainer">
+              <div className="bmiResult">
+                <div className="textPreface">
+                  <p>Your BMI is...</p>
+                </div>
+                <div className="resultNumber">
+                  <p>23.4</p>
+                </div>
+              </div>
+              <div className="textExpantiation">
+                <p>Your BMI suggests you're a healthy weight. Your ideal weight is between <span className="idealWeight">9st 6lbs - 12st 10lbs.</span></p>
+              </div>
+            </div>
+          </div>          
+        }
         </div>
       </div>
       <div className="leadingLineContainer">
@@ -184,7 +240,7 @@ function App() {
         <div className="pregnancyLimitationCard">
           <div className="pregnancyCardHeader">
             <div className="pregnancyIcon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32"><path fill="#FFC700" d="M11.5 17.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm9-2.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Zm-1.4 5.615a5.875 5.875 0 0 1-6.2 0 .75.75 0 0 0-.8 1.27 7.375 7.375 0 0 0 7.8 0 .751.751 0 0 0-.8-1.27ZM28.75 16A12.75 12.75 0 1 1 16 3.25 12.765 12.765 0 0 1 28.75 16Zm-1.5 0A11.263 11.263 0 0 0 16.366 4.756C14.787 6.904 14.75 8.981 14.75 9a1.25 1.25 0 0 0 2.5 0 .75.75 0 1 1 1.5 0 2.75 2.75 0 1 1-5.5 0c0-.094.019-1.978 1.268-4.152A11.25 11.25 0 1 0 27.25 16Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32"><path fill="#FFC700" d="M11.5 17.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm9-2.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Zm-1.4 5.615a5.875 5.875 0 0 1-6.2 0 .75.75 0 0 0-.8 1.27 7.375 7.375 0 0 0 7.8 0 .751.751 0 0 0-.8-1.27ZM28.75 16A12.75 12.75 0 1 1 16 3.25 12.765 12.765 0 0 1 28.75 16Zm-1.5 0A11.263 11.263 0 0 0 16.366 4.756C14.787 6.904 14.75 8.981 14.75 9a1.25 1.25 0 0 0 2.5 0 .75.75 0 1 1 1.5 0 2.75 2.75 0 1 1-5.5 0c0-.094.019-1.978 1.268-4.152A11.25 11.25 0 1 0 27.25 16Z" /></svg>
             </div>
             <p className="pregnancyHeaderText">Pregnancy</p>
           </div>
@@ -195,7 +251,7 @@ function App() {
         <div className="raceLimitationCard">
           <div className="raceCardHeader">
             <div className="raceIcon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32"><path fill="#F21E84" d="M16 8.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Zm0-6a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Zm11.11 14.177-5.651-6.407a3.75 3.75 0 0 0-2.813-1.27h-5.292a3.75 3.75 0 0 0-2.813 1.269L4.89 16.927a2.25 2.25 0 0 0 3.168 3.198l2.638-2.116-2.266 8.606a2.25 2.25 0 0 0 4.094 1.868L16 22.5l3.476 5.989a2.25 2.25 0 0 0 4.094-1.868l-2.266-8.608 2.639 2.112a2.25 2.25 0 0 0 3.167-3.195v-.003Zm-1.079 2.103a.75.75 0 0 1-1.061 0 .523.523 0 0 0-.061-.055l-4.439-3.56a.75.75 0 0 0-1.195.775l2.859 10.866a.966.966 0 0 0 .046.125.75.75 0 1 1-1.36.634.542.542 0 0 0-.031-.06l-4.14-7.13a.75.75 0 0 0-1.298 0l-4.14 7.131a.534.534 0 0 0-.031.06.75.75 0 0 1-1.36-.633.954.954 0 0 0 .046-.125l2.859-10.867a.75.75 0 0 0-.316-.816.759.759 0 0 0-.409-.125.75.75 0 0 0-.47.165l-4.439 3.56a.523.523 0 0 0-.061.055.75.75 0 0 1-1.061-1.061L6 17.935l5.665-6.424a2.25 2.25 0 0 1 1.688-.761h5.292a2.25 2.25 0 0 1 1.688.761L26 17.935l.032.034a.748.748 0 0 1 0 1.061Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32"><path fill="#F21E84" d="M16 8.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Zm0-6a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Zm11.11 14.177-5.651-6.407a3.75 3.75 0 0 0-2.813-1.27h-5.292a3.75 3.75 0 0 0-2.813 1.269L4.89 16.927a2.25 2.25 0 0 0 3.168 3.198l2.638-2.116-2.266 8.606a2.25 2.25 0 0 0 4.094 1.868L16 22.5l3.476 5.989a2.25 2.25 0 0 0 4.094-1.868l-2.266-8.608 2.639 2.112a2.25 2.25 0 0 0 3.167-3.195v-.003Zm-1.079 2.103a.75.75 0 0 1-1.061 0 .523.523 0 0 0-.061-.055l-4.439-3.56a.75.75 0 0 0-1.195.775l2.859 10.866a.966.966 0 0 0 .046.125.75.75 0 1 1-1.36.634.542.542 0 0 0-.031-.06l-4.14-7.13a.75.75 0 0 0-1.298 0l-4.14 7.131a.534.534 0 0 0-.031.06.75.75 0 0 1-1.36-.633.954.954 0 0 0 .046-.125l2.859-10.867a.75.75 0 0 0-.316-.816.759.759 0 0 0-.409-.125.75.75 0 0 0-.47.165l-4.439 3.56a.523.523 0 0 0-.061.055.75.75 0 0 1-1.061-1.061L6 17.935l5.665-6.424a2.25 2.25 0 0 1 1.688-.761h5.292a2.25 2.25 0 0 1 1.688.761L26 17.935l.032.034a.748.748 0 0 1 0 1.061Z" /></svg>
             </div>
             <p className="raceHeaderText">Race</p>
           </div>

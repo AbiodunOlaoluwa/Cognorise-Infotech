@@ -48,7 +48,7 @@ input[type="number"] {
   color: var(--gunmetal);
 }
 
-input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
@@ -125,7 +125,7 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-grow: 0;
   }
 
-  .inputFormContainer {
+  .metricInputFormContainer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -141,7 +141,7 @@ input[type="number"]::-webkit-outer-spin-button {
     border-radius: 16px;
   }
 
-  .inputFormHeader {
+  .metricInputFormHeader {
     width: 253px;
     height: 29px;
     font-family: "Inter";
@@ -161,11 +161,11 @@ input[type="number"]::-webkit-outer-spin-button {
     color: var(--gunmetal);
   }
 
-  .inputFieldsLabel {
+  .metricInputFieldsLabel {
     color: var(--dark_electric_blue);
   }
 
-  .inputOptions {
+  .metricInputOptions {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -261,7 +261,7 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-grow: 1;
   }
 
-  .inputContainer {
+  .metricInputContainer {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -280,11 +280,11 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-grow: 0;
   }
 
-  .inputContainer:focus-within {
+  .metricInputContainer:focus-within {
     border: 1px solid #345ff6;
   }
 
-  .heightInputAfterText {
+  .metricHeightInputAfterText {
     display: inline;
     width: 35px;
     height: 29px;
@@ -300,9 +300,293 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-grow: 0;
   }
 
-  .weightInputAfterText {
+  .metricWeightInputAfterText {
     display: inline;
     width: 35px;
+    height: 29px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    color: #345ff6;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+
+  .imperialInputFormContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 32px;
+    position: absolute;
+    width: 564px;
+    height: 606px;
+    left: 736px;
+    top: 166px;
+    background: #ffffff;
+    box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+    border-radius: 16px;
+  }
+
+  .imperialInputFormHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 253px;
+    height: 29px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .imperialInputFormHeaderText {
+    width: 253px;
+    height: 29px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    color: #253347;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .imperialInputOptions {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 500px;
+    height: 31px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .imperialInputFields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 500px;
+    height: 220px;
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .imperialHeightInputFields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 500px;
+    height: 98px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .imperialInputFieldsLabel {
+    width: 44px;
+    height: 21px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #5e6e85;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .imperialHeightInputFieldsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 500px;
+    height: 69px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .heightFeetInputContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 24px;
+    width: 238px;
+    height: 69px;
+    background: #ffffff;
+    border: 1px solid #d8e2e7;
+    border-radius: 12px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+  }
+
+  .heightFeetInputAfterText {
+    width: 17px;
+    height: 29px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    color: #345ff6;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+
+  .heightInchesInputContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 24px;
+    width: 238px;
+    height: 69px;
+    background: #ffffff;
+    border: 1px solid #d8e2e7;
+    border-radius: 12px;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .heightInchesInputAfterText {
+    width: 20px;
+    height: 29px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    color: #345ff6;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+
+  .imperialWeightInputFieldsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 500px;
+    height: 69px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .imperialWeightInputFields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 500px;
+    height: 98px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .imperialInputFieldsLabel {
+    width: 46px;
+    height: 21px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #5e6e85;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .weightStoneInputContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 24px;
+    width: 238px;
+    height: 69px;
+    background: #ffffff;
+    border: 1px solid #d8e2e7;
+    border-radius: 12px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+  }
+
+  .weightStoneInputAfterText {
+    width: 22px;
+    height: 29px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    color: #345ff6;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+
+  .weightPoundsInputContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 24px;
+    width: 238px;
+    height: 69px;
+    background: #ffffff;
+    border: 1px solid #d8e2e7;
+    border-radius: 12px;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .weightPoundsInputAfterText {
+    width: 33px;
     height: 29px;
     font-family: "Inter";
     font-style: normal;
