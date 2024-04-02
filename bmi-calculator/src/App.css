@@ -161,7 +161,7 @@ input[type="number"]::-webkit-outer-spin-button {
     color: var(--gunmetal);
   }
 
-  .metricInputFieldsLabel {
+  .inputFieldsLabel {
     color: var(--dark_electric_blue);
   }
 
@@ -402,20 +402,6 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-grow: 0;
   }
 
-  .imperialInputFieldsLabel {
-    width: 44px;
-    height: 21px;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-    color: #5e6e85;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-  }
-
   .imperialHeightInputFieldsContainer {
     display: flex;
     flex-direction: row;
@@ -506,6 +492,22 @@ input[type="number"]::-webkit-outer-spin-button {
     order: 1;
     align-self: stretch;
     flex-grow: 0;
+  }
+
+  .heightFeetInputContainer:focus-within {
+    border: 1px solid #345ff6;
+  }
+
+  .heightInchesInputContainer:focus-within {
+    border: 1px solid var(--blue);
+  }
+
+  .weightStoneInputContainer:focus-within {
+    border: 1px solid var(--blue);
+  }
+
+  .weightPoundsInputContainer:focus-within{
+    border: 1px solid var(--blue);
   }
 
   .imperialWeightInputFields {

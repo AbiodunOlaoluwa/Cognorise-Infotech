@@ -40,14 +40,14 @@ function App() {
             </div>
             <div className="metricInputFields">
               <div className="metricHeightInputField">
-                <label className='metricInputFieldsLabel' htmlFor="heightInput">Height</label>
+                <label className='inputFieldsLabel' htmlFor="heightInput">Height</label>
                 <div className="metricInputContainer">
                   <input type="number" name="height" id="heightInput" autoComplete='off' placeholder='0' />
                   <p className="heightInputAfterText">cm</p>
                 </div>
               </div>
               <div className="metricWeightInputField">
-                <label className='metricInputFieldsLabel' htmlFor="weightInput">Weight</label>
+                <label className='inputFieldsLabel' htmlFor="weightInput">Weight</label>
                 <div className="metricInputContainer">
                   <input type="number" name="weight" id="weightInput" autoComplete='off' placeholder='0' />
                   <p className="weightInputAfterText">kg</p>
@@ -84,7 +84,7 @@ function App() {
             </div>
             <div className="imperialInputFields">
               <div className="imperialHeightInputFields">
-                <label htmlFor="heightFeet" className="imperialInputFieldsLabel">Height</label>
+                <label htmlFor="heightFeet" className="inputFieldsLabel">Height</label>
                 <div className="imperialHeightInputFieldsContainer">
                 <div className="heightFeetInputContainer">
                   <input type="number" name="heightFeet" id="heightFeet" autoComplete='off' placeholder='0' />
@@ -97,7 +97,7 @@ function App() {
                 </div>
               </div>
               <div className="imperialWeightInputFields">
-                <label htmlFor="weightStone" className="imperialInputFieldsLabel">Weight</label>
+                <label htmlFor="weightStone" className="inputFieldsLabel">Weight</label>
                 <div className="imperialWeightInputFieldsContainer">
                 <div className="weightStoneInputContainer">
                   <input type="number" name="weightStone" id="weightStone" autoComplete='off' placeholder='0' />
