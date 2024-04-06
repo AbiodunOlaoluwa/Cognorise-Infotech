@@ -43,14 +43,14 @@ function App() {
                 <label className='inputFieldsLabel' htmlFor="heightInput">Height</label>
                 <div className="metricInputContainer">
                   <input type="number" name="height" id="heightInput" autoComplete='off' placeholder='0' />
-                  <p className="heightInputAfterText">cm</p>
+                  <p className="metricHeightInputAfterText">cm</p>
                 </div>
               </div>
               <div className="metricWeightInputField">
                 <label className='inputFieldsLabel' htmlFor="weightInput">Weight</label>
                 <div className="metricInputContainer">
                   <input type="number" name="weight" id="weightInput" autoComplete='off' placeholder='0' />
-                  <p className="weightInputAfterText">kg</p>
+                  <p className="metricWeightInputAfterText">kg</p>
                 </div>
               </div>
             </div>

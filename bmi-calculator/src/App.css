@@ -288,7 +288,7 @@ input[type="number"]::-webkit-outer-spin-button {
     display: inline;
     width: 35px;
     height: 29px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -304,7 +304,7 @@ input[type="number"]::-webkit-outer-spin-button {
     display: inline;
     width: 35px;
     height: 29px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -348,7 +348,7 @@ input[type="number"]::-webkit-outer-spin-button {
   .imperialInputFormHeaderText {
     width: 253px;
     height: 29px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -436,7 +436,7 @@ input[type="number"]::-webkit-outer-spin-button {
   .heightFeetInputAfterText {
     width: 17px;
     height: 29px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -468,7 +468,7 @@ input[type="number"]::-webkit-outer-spin-button {
   .heightInchesInputAfterText {
     width: 20px;
     height: 29px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -527,7 +527,7 @@ input[type="number"]::-webkit-outer-spin-button {
   .imperialInputFieldsLabel {
     width: 46px;
     height: 21px;
-    font-family: "Inter";
+    font-family: "Inter", Sans-Serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -558,7 +558,7 @@ input[type="number"]::-webkit-outer-spin-button {
   .weightStoneInputAfterText {
     width: 22px;
     height: 29px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -590,7 +590,7 @@ input[type="number"]::-webkit-outer-spin-button {
   .weightPoundsInputAfterText {
     width: 33px;
     height: 29px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -651,7 +651,7 @@ input[type="number"]::-webkit-outer-spin-button {
   .resultNumber {
     width: 132px;
     height: 70px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 64px;
@@ -669,7 +669,7 @@ input[type="number"]::-webkit-outer-spin-button {
     align-items: center;
     width: 206px;
     height: 84px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -1077,7 +1077,7 @@ input[type="number"]::-webkit-outer-spin-button {
   .pregnancyHeaderText {
     width: 253px;
     height: 24px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -1092,7 +1092,7 @@ input[type="number"]::-webkit-outer-spin-button {
   .pregnancyCardBody {
     width: 301px;
     height: 120px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1137,7 +1137,7 @@ input[type="number"]::-webkit-outer-spin-button {
   .raceHeaderText {
     width: 253px;
     height: 24px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -1152,7 +1152,7 @@ input[type="number"]::-webkit-outer-spin-button {
   .raceCardBody {
     width: 301px;
     height: 120px;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1167,7 +1167,11 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* Tablet */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  /* Your CSS styles for tablet here */
+  .appContainer {
+    overflow-x: hidden;
+  }
+
+  
 }
 
 /* Mobile devices */
