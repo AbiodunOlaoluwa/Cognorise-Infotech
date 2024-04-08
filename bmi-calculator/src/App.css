@@ -506,7 +506,7 @@ input[type="number"]::-webkit-outer-spin-button {
     border: 1px solid var(--blue);
   }
 
-  .weightPoundsInputContainer:focus-within{
+  .weightPoundsInputContainer:focus-within {
     border: 1px solid var(--blue);
   }
 
@@ -1169,12 +1169,1207 @@ input[type="number"]::-webkit-outer-spin-button {
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .appContainer {
     overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
   }
 
-  
+  .heroSection {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .mainArea {
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(
+      290.1deg,
+      #d6e6fe 0%,
+      rgba(214, 252, 254, 0) 100%
+    );
+    border-radius: 0px 0px 35px 35px;
+  }
+
+  .logoContainer {
+    width: 95%;
+    margin: 1.2rem;
+    display: flex;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mainAreaTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    margin: 2rem;
+  }
+
+  .heroHeaderText {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 110%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    color: var(--gunmetal);
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .heroBodyText {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: var(--dark_electric_blue);
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .metricInputFormContainerBox {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .metricInputFormContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    background-color: var(--pure_white);
+    padding: 2rem;
+    border-radius: 12px;
+  }
+
+  .metricInputFormHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .metricInputFormHeaderText {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    color: var(--gunmetal);
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .metricInputOptions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .metricOptionRadio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 18px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+  }
+
+  .imperialOptionRadio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 18px;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .radioButtonLabel {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--gunmetal);
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+
+  input[type="radio"] {
+    width: 31px;
+    height: 31px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .metricInputFields {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .metricHeightInputField {
+    width: 299px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+  }
+
+  .metricInputContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 24px;
+    background: var(--pure_white);
+    border: 1px solid #d8e2e7;
+    border-radius: 12px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .inputFieldsLabel {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #5e6e85;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .metricHeightInputAfterText {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    color: var(--blue);
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+
+  .metricWeightInputField {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 299px;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .metricWeightInputAfterText {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    color: var(--blue);
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+
+  .outputContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    gap: 24px;
+    width: 622px;
+    height: 149px;
+    background: linear-gradient(90deg, #345ff7 0%, #587dff 100%);
+    border-radius: 16px 999px 999px 16px;
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .bmiResult {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 267px;
+    height: 85px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+  }
+
+  .textPreface {
+    width: 267px;
+    height: 24px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--pure_white);
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .resultNumber {
+    width: 99px;
+    height: 53px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 110%;
+    letter-spacing: -0.05em;
+    color: #ffffff;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+
+  .textExpantiation {
+    width: 267px;
+    height: 63px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--pure_white);
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .idealWeight {
+    font-weight: 600;
+  }
+
+  .imperialInputFormContainerBox {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* margin-top: 3rem; */
+  }
+
+  .imperialInputFormContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    background-color: var(--pure_white);
+    padding: 2rem;
+    border-radius: 12px;
+  }
+
+  .imperialInputFormHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .imperialInputFormHeaderText {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    color: var(--gunmetal);
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .imperialInputOptions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .imperialInputFields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .imperialHeightInputFields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .inputFieldsLabel {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #5e6e85;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .imperialHeightInputFieldsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .heightFeetInputContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 24px;
+    width: 238px;
+    height: 69px;
+    background: #ffffff;
+    border: 1px solid #d8e2e7;
+    border-radius: 12px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+  }
+
+  .heightInchesInputContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 24px;
+    width: 238px;
+    height: 69px;
+    background: #ffffff;
+    border: 1px solid #d8e2e7;
+    border-radius: 12px;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .imperialWeightInputFields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .imperialWeightInputFieldsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 100%;
+    height: 69px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .weightStoneInputContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 24px;
+    width: 238px;
+    height: 69px;
+    background: #ffffff;
+    border: 1px solid #d8e2e7;
+    border-radius: 12px;
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+  }
+
+  .weightPoundsInputContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 24px;
+    width: 238px;
+    height: 69px;
+    background: #ffffff;
+    border: 1px solid #d8e2e7;
+    border-radius: 12px;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .inputAfterText {
+    width: 35px;
+    height: 29px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    color: #345ff6;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+
+  .leadingLineContainer {
+    display: none;
+  }
+
+  .secondSection {
+    display: flex;
+    align-items: center;
+    gap: 61px;
+    flex-direction: row;
+    position: relative;
+    height: 40vh;
+    width: 95vw;
+    position: absolute;
+    justify-content: center;
+    top: 917px;
+  }
+
+  .secondSectionMainImage {
+    position: relative;
+    width: 100%;
+    height: 411.09px;
+    left: 39px;
+  }
+
+  .secondSectionTextAreaContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 414px;
+    background: #ffffff;
+    float: right;
+    padding-right: 2rem;
+  }
+
+  .sSTAHeader {
+    width: 270px;
+    height: 70px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: -0.05em;
+    color: #253347;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .sSTABodyText {
+    width: 100%;
+    height: 312px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #5e6e85;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .thirdSectionContainmentBox {
+    position: absolute;
+    width: 100%;
+    height: 503px;
+    left: 0px;
+    top: 1424.09px;
+    background: linear-gradient(
+      290.1deg,
+      #d6e6fe 0%,
+      rgba(214, 252, 254, 0) 100%
+    );
+    opacity: 0.25;
+  }
+
+  .thirdSectionContentBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 40px;
+    position: absolute;
+    width: 100%;
+    height: 383px;
+    left: 39px;
+    top: 1484px;
+  }
+
+  .thirdSectionSubsectionContentBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 40px;
+    width: 100%;
+    height: 101px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .iconContainer {
+    width: 64px;
+    height: 64px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .healthyEatingTextContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 100%;
+    height: 101px;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .textHeader {
+    width: 582px;
+    height: 29px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+    color: #253347;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .textBody {
+    width: 582px;
+    height: 48px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #5e6e85;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .exerciseTextContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 582px;
+    height: 101px;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .sleepTextContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 582px;
+    height: 101px;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .limitationsSectionBox {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .limitationsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 56px;
+    position: absolute;
+    width: 686px;
+    left: 39px;
+    top: 2023.09px;
+    padding-bottom: 7rem;
+  }
+
+  .limitationsIntroText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 32px;
+    width: 686px;
+    height: 139px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .limitationsHeader {
+    width: 686px;
+    height: 35px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 110%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    color: #253347;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .limitationsText {
+    width: 686px;
+    height: 72px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #5e6e85;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .limitationsLeadingLine {
+    display: none;
+  }
+
+  .gender-ageCards {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 15px;
+    width: 686px;
+    height: 232px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .limitationCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 32px;
+    width: 335.5px;
+    height: 232px;
+    background: #ffffff;
+    box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+    border-radius: 16px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 1;
+  }
+
+  .cardHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    width: 271.5px;
+    height: 32px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .cardHeaderText {
+    width: 223.5px;
+    height: 24px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.05em;
+    color: #253347;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .cardBody {
+    width: 271.5px;
+    height: 120px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #5e6e85;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .ageLimitationCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 32px;
+    width: 335.5px;
+    height: 232px;
+    background: #ffffff;
+    box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+    border-radius: 16px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+  }
+
+  .ageCardHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    width: 271.5px;
+    height: 32px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .ageHeaderText {
+    width: 223.5px;
+    height: 24px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.05em;
+    color: #253347;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .muscle-pregnancy {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 15px;
+    width: 686px;
+    height: 256px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+
+  .ageCardBody {
+    width: 271.5px;
+    height: 72px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #5e6e85;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .muscleLimitationCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 32px;
+    width: 335.5px;
+    height: 256px;
+    background: #ffffff;
+    box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+    border-radius: 16px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 1;
+  }
+
+  .muscleCardHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    width: 271.5px;
+    height: 32px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .muscleHeaderText {
+    width: 223.5px;
+    height: 24px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.05em;
+    color: #253347;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .muscleCardBody {
+    width: 271.5px;
+    height: 96px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #5e6e85;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .pregnancyLimitationCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 32px;
+    width: 335.5px;
+    height: 256px;
+    background: #ffffff;
+    box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+    border-radius: 16px;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .pregnancyCardHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    width: 271.5px;
+    height: 32px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .pregnancyHeaderText {
+    width: 223.5px;
+    height: 24px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.05em;
+    color: #253347;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .pregnancyCardBody {
+    width: 271.5px;
+    height: 144px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #5e6e85;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .raceContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 15px;
+    width: 686px;
+    height: 232px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+  }
+
+  .raceLimitationCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 32px;
+    width: 365px;
+    height: 232px;
+    background: #ffffff;
+    box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+    border-radius: 16px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .raceCardHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    width: 301px;
+    height: 32px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .raceHeaderText {
+    width: 253px;
+    height: 24px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.05em;
+    color: #253347;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .raceCardBody {
+    width: 301px;
+    height: 120px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #5e6e85;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
 }
 
 /* Mobile devices */
 @media only screen and (max-width: 767px) {
-  /* Your CSS styles for mobile devices here */
+  .appContainer {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .heroSection {
+position: absolute;
+width: 375px;
+height: 1120px;
+left: 0px;
+top: 0px;
+  }
+
+  .mainArea {
+position: absolute;
+width: 375px;
+height: 640px;
+left: 0px;
+top: 0px;
+background: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
+border-radius: 0px 0px 35px 35px;
+  }
+
+  .logoContainer {
+    margin: 1.2rem;
+    display: flex;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mainAreaTextContainer {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 24px;
+
+position: absolute;
+width: 327px;
+height: 327px;
+left: 24px;
+top: 96px;
+  }
+
+  
 }
