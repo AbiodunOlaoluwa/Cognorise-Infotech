@@ -1,0 +1,45 @@
+BMI less than 18.5 falls within the underweight range
+BMI 18.5 - <25 falls within the healthy weight range
+BMI 25.0 - <30 falls within the overweight range
+BMI >= 30 falls within the obesity range
+
+
+Body Mass Index (BMI) is a person's weight in kilograms divided by the square of height in meters. A high BMI can indicate high body fatness.
+
+Default Welcome Message:
+"Welcome to the BMI Calculator! Start by entering your height and weight to calculate your BMI."
+
+
+BMI Range Messages:
+Underweight (BMI < 18.5):
+"Your BMI suggests you're underweight. Consider consulting a healthcare professional to discuss a healthy weight gain plan."
+Normal Weight (18.5 <= BMI < 24.9):
+"Your BMI suggests you're a healthy weight. Keep up the good work!"
+Overweight (25.0 <= BMI < 29.9):
+"Your BMI suggests you're overweight. Consider focusing on a balanced diet and regular exercise to achieve a healthier weight."
+Obese (BMI >= 30.0):
+"Your BMI suggests you're obese. It's important to prioritize your health by adopting lifestyle changes such as diet modifications and increased physical activity. Consult a healthcare professional for personalized advice."
+
+
+The ideal weight of a person based on their BMI can be calculated using the formula:
+
+Ideal Weight
+=
+BMI×(Height in meters)^2
+Ideal Weight=BMI×(Height in meters) 
+2
+ 
+
+where:
+
+BMI is the Body Mass Index calculated using the formula: 
+BMI=Weight in kilograms(Height in meters)^2
+BMI= 
+(Height in meters) 
+2
+ 
+Weight in kilograms
+​
+ 
+Height is typically measured in meters.
+This formula assumes that the BMI is within the normal weight range (18.5 <= BMI < 24.9). If the BMI falls outside this range, it may not accurately represent the ideal weight, and additional considerations may be needed.

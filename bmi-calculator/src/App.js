@@ -5,6 +5,82 @@ import image from "./image-man-eating.webp";
 function App() {
 
   const [unitType, setUnitType] = useState("metric");
+  const [metricCm, setMetricCm] = useState();
+  const [metricKg, setMetricKg] = useState();
+  const [imperialFt, setImperialFt] = useState();
+  const [imperialIn, setImperialIn] = useState();
+  const [imperialSt, setImperialSt] = useState();
+  const [imperialLb, setImperialLb] = useState();
+  const [bmiResult, setBmiResult] = useState(0);
+
+  let bmiResultExpantiationWelcomeMessage = "Welcome to the BMI Calculator! Start by entering your height and weight to calculate your BMI.";
+  let bmiResultExpantiationText = "";
+  let defaultBmiResultMeaningMessage = "Your BMI result will be displayed here once you input your height and weight. BMI, or Body Mass Index, is a measure of body fat based on height and weight that applies to adult men and women. It is used as a screening tool to identify possible weight problems for adults."
+  let bmiResultMeaning = "";
+
+  const handleChange = (event) => {
+    if (event.target.name === 'height') {
+      setMetricCm(parseInt(event.target.value));
+    } else if (event.target.name === 'weight') {
+      setMetricKg(parseInt(event.target.value));
+    }
+    else if (event.target.name === 'heightFeet') {
+      setImperialFt(parseInt(event.target.value));
+    }
+    else if (event.target.name === 'heightInches') {
+      setImperialIn(parseInt(event.target.value));
+    }
+    else if (event.target.name === 'weightStone') {
+      setImperialSt(parseInt(event.target.value));
+    }
+    else if (event.target.name === 'weightPounds') {
+      setImperialLb(parseInt(event.target.value));
+    }
+  }
+
+  const calculateBmi = () => {
+    if (unitType === "metric") {
+      let totalPounds = metricKg * 2.20462;
+      let stone = Math.floor(totalPounds / 14);
+      setImperialSt(stone);
+      let pounds = Math.round(totalPounds % 14);
+      setImperialLb(pounds);
+      let heightInMeters = metricCm / 100;
+      let inches = metricCm / 2.54;
+      let feet = Math.floor(inches / 12);
+      setImperialFt(feet);
+      let remainderInches = Math.round(inches % 12);
+      setImperialIn(remainderInches);
+      let bmi = metricKg / (heightInMeters * heightInMeters);
+      setBmiResult(bmi.toFixed(2));
+    } else if (unitType === "imperial") {
+      let feetToInches = imperialFt * 12;
+      let heightInInches = feetToInches + imperialIn;
+      let heightInCentimeters = heightInInches * 2.54;
+      setMetricCm(heightInCentimeters.toFixed(2));
+      let heightInMeters = heightInCentimeters / 100;
+      let stoneToPounds = imperialSt * 14;
+      let weightInPounds = stoneToPounds + imperialLb;
+      let totalWeightInKg = weightInPounds * 0.453592;
+      setMetricKg(totalWeightInKg.toFixed(2));
+      let bmi = totalWeightInKg / (heightInMeters * heightInMeters);
+      setBmiResult(bmi.toFixed(2));
+    }
+  }
+
+  if (bmiResult < 18.5) {
+    bmiResultExpantiationText = "Your BMI suggests you're underweight. Consider consulting a healthcare professional to discuss a healthy weight gain plan."
+    bmiResultMeaning = "Your BMI suggests that you are underweight. Being underweight may increase your risk of health issues such as weakened immune function and osteoporosis. It's important to focus on gaining weight in a healthy manner. Consider consulting with a healthcare professional or a dietitian to develop a nutritious eating plan that promotes gradual weight gain. Additionally, incorporating strength-building exercises into your routine can help build muscle mass."
+  } else if ((18.5 <= bmiResult) && (bmiResult < 24.9)) {
+    bmiResultExpantiationText = "Your BMI suggests you're a healthy weight. Keep up the good work!"
+    bmiResultMeaning = "Congratulations! Your BMI falls within the healthy weight range. Maintaining a healthy weight is important for overall well-being and may lower your risk of various health conditions. Keep up the good work by continuing to prioritize a balanced diet rich in fruits, vegetables, lean proteins, and whole grains. Regular exercise, such as brisk walking or cycling, can further enhance your health."
+  } else if ((25.0 <= bmiResult) && (bmiResult < 29.9)) {
+    bmiResultExpantiationText = "Your BMI suggests you're overweight. Consider focusing on a balanced diet and regular exercise to achieve a healthier weight."
+    bmiResultMeaning = "Your BMI suggests that you are overweight. Being overweight may increase your risk of developing health issues such as heart disease, high blood pressure, and type 2 diabetes. It's essential to focus on achieving a healthy weight through lifestyle modifications. Consider incorporating more physical activity into your routine, aiming for at least 150 minutes of moderate-intensity exercise per week. Additionally, adopting a balanced diet with controlled portion sizes can help you reach your weight loss goals."
+  } else if (bmiResult > 30.0) {
+    bmiResultExpantiationText = "Your BMI suggests you're obese. It's important to prioritize your health by adopting lifestyle changes. Consult a healthcare professional for personalized advice."
+    bmiResultMeaning = "Your BMI indicates that you are obese. Obesity is associated with an increased risk of serious health conditions, including heart disease, stroke, and certain cancers. It's crucial to take proactive steps to manage your weight and improve your health. Work with a healthcare provider or a registered dietitian to develop a comprehensive weight loss plan tailored to your individual needs. This plan may include dietary changes, increased physical activity, and behavior modifications to support long-term weight management."
+  }
 
   return (
     <div className="appContainer">
@@ -43,16 +119,21 @@ function App() {
                   <div className="metricHeightInputField">
                     <label className='inputFieldsLabel' htmlFor="heightInput">Height</label>
                     <div className="metricInputContainer">
-                      <input type="number" name="height" id="heightInput" autoComplete='off' placeholder='0' />
+                      <input type="number" name="height" id="heightInput" autoComplete='off' placeholder='0' value={metricCm} onChange={handleChange} />
                       <p className="metricHeightInputAfterText">cm</p>
                     </div>
                   </div>
                   <div className="metricWeightInputField">
                     <label className='inputFieldsLabel' htmlFor="weightInput">Weight</label>
                     <div className="metricInputContainer">
-                      <input type="number" name="weight" id="weightInput" autoComplete='off' placeholder='0' />
+                      <input type="number" name="weight" id="weightInput" autoComplete='off' placeholder='0' value={metricKg} onChange={handleChange} />
                       <p className="metricWeightInputAfterText">kg</p>
                     </div>
+                  </div>
+                </div>
+                <div className="calculateButtonContainer" onClick={calculateBmi}>
+                  <div className="calculateButton">
+                    <p>Calculate</p>
                   </div>
                 </div>
                 <div className="outputContainer">
@@ -61,13 +142,14 @@ function App() {
                       <p>Your BMI is...</p>
                     </div>
                     <div className="resultNumber">
-                      <p>23.4</p>
+                      <p>{bmiResult}</p>
                     </div>
                   </div>
-                  <div className="textExpantiation">
-                    <p>Your BMI suggests you're a healthy weight. Your ideal weight is between <span className="idealWeight">63.3kgs - 85.2kgs</span></p>
+                  <div className="textExpantiation">{ bmiResult === 0 ?
+                    <p>{bmiResultExpantiationWelcomeMessage}</p> :
+                    <p>{bmiResultExpantiationText}</p>}                 
                   </div>
-                </div>
+                  </div>
               </div>
             </div>
             :
@@ -91,11 +173,11 @@ function App() {
                     <label htmlFor="heightFeet" className="inputFieldsLabel">Height</label>
                     <div className="imperialHeightInputFieldsContainer">
                       <div className="heightFeetInputContainer">
-                        <input type="number" name="heightFeet" id="heightFeet" autoComplete='off' placeholder='0' />
+                        <input type="number" name="heightFeet" id="heightFeet" autoComplete='off' placeholder='0' value={imperialFt} onChange={handleChange} />
                         <p className="inputAfterText">ft</p>
                       </div>
                       <div className="heightInchesInputContainer">
-                        <input type="number" name="heightInches" id="heightInches" autoComplete='off' placeholder='0' />
+                        <input type="number" name="heightInches" id="heightInches" autoComplete='off' placeholder='0' value={imperialIn} onChange={handleChange} />
                         <p className="inputAfterText">in</p>
                       </div>
                     </div>
@@ -104,14 +186,19 @@ function App() {
                     <label htmlFor="weightStone" className="inputFieldsLabel">Weight</label>
                     <div className="imperialWeightInputFieldsContainer">
                       <div className="weightStoneInputContainer">
-                        <input type="number" name="weightStone" id="weightStone" autoComplete='off' placeholder='0' />
+                        <input type="number" name="weightStone" id="weightStone" autoComplete='off' placeholder='0' value={imperialSt} onChange={handleChange} />
                         <p className="inputAfterText">st</p>
                       </div>
                       <div className="weightPoundsInputContainer">
-                        <input type="number" name="weightPounds" id="weightPounds" autoComplete='off' placeholder='0' />
+                        <input type="number" name="weightPounds" id="weightPounds" autoComplete='off' placeholder='0' value={imperialLb} onChange={handleChange} />
                         <p className="inputAfterText">lbs</p>
                       </div>
                     </div>
+                  </div>
+                </div>
+                <div className="calculateButtonContainer" onClick={calculateBmi}>
+                  <div className="calculateButton">
+                    <p>Calculate</p>
                   </div>
                 </div>
                 <div className="outputContainer">
@@ -120,11 +207,15 @@ function App() {
                       <p>Your BMI is...</p>
                     </div>
                     <div className="resultNumber">
-                      <p>23.4</p>
+                      <p>{bmiResult}</p>
                     </div>
                   </div>
-                  <div className="textExpantiation">
-                    <p>Your BMI suggests you're a healthy weight. Your ideal weight is between <span className="idealWeight">9st 6lbs - 12st 10lbs.</span></p>
+                  <div className="textExpantiation">{
+                    bmiResult === 0 ? 
+                    <p>{bmiResultExpantiationWelcomeMessage}</p>
+                    :
+                    <p>{bmiResultExpantiationText}</p>
+                  }
                   </div>
                 </div>
               </div>
@@ -144,8 +235,9 @@ function App() {
             <p className="sSTAHText">What your BMI result means</p>
           </div>
           <div className="sSTABodyText">
-            <p className="sSTABTParagraph">
-              A BMI range of 18.5 to 24.9 is considered a 'healthy weight'. Maintaining a healthy weight may lower your chances of experiencing health issues later on, such as obesity and type 2 diabetes. Aim fot a nutritious diet with reduced fat and sugar content, incorporating ample fruits and vegetables. Additionally, strive for regular physical activity, ideally about 30 minutes daily for five days a week.
+            <p className="sSTABTParagraph">{ bmiResult === 0 ?
+                    <p>{defaultBmiResultMeaningMessage}</p> :
+                    <p>{bmiResultMeaning}</p>}
             </p>
           </div>
         </div>

@@ -54,6 +54,27 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+.calculateButtonContainer {
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  font: 'Inter';
+  font-weight: 500;
+}
+
+.calculateButton {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: var(--blue);
+  color: var(--pure_white);
+  border-radius: 16px;
+}
+
 /* Desktop */
 @media only screen and (min-width: 1024px) {
   .heroSection {
@@ -133,7 +154,6 @@ input[type="number"]::-webkit-outer-spin-button {
     gap: 32px;
     position: absolute;
     width: 564px;
-    height: 484px;
     left: 736px;
     top: 166px;
     background: var(--pure_white);
@@ -324,7 +344,6 @@ input[type="number"]::-webkit-outer-spin-button {
     gap: 32px;
     position: absolute;
     width: 564px;
-    height: 606px;
     left: 736px;
     top: 166px;
     background: #ffffff;
@@ -433,7 +452,7 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-grow: 1;
   }
 
-  .heightFeetInputAfterText {
+  .inputAfterText {
     width: 17px;
     height: 29px;
     font-family: "Inter", sans-serif;
@@ -463,21 +482,6 @@ input[type="number"]::-webkit-outer-spin-button {
     flex: none;
     order: 1;
     flex-grow: 1;
-  }
-
-  .heightInchesInputAfterText {
-    width: 20px;
-    height: 29px;
-    font-family: "Inter", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 29px;
-    letter-spacing: -0.05em;
-    color: #345ff6;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
   }
 
   .imperialWeightInputFieldsContainer {
@@ -555,21 +559,6 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-grow: 1;
   }
 
-  .weightStoneInputAfterText {
-    width: 22px;
-    height: 29px;
-    font-family: "Inter", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 29px;
-    letter-spacing: -0.05em;
-    color: #345ff6;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-  }
-
   .weightPoundsInputContainer {
     box-sizing: border-box;
     display: flex;
@@ -585,21 +574,6 @@ input[type="number"]::-webkit-outer-spin-button {
     flex: none;
     order: 1;
     flex-grow: 1;
-  }
-
-  .weightPoundsInputAfterText {
-    width: 33px;
-    height: 29px;
-    font-family: "Inter", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 29px;
-    letter-spacing: -0.05em;
-    color: #345ff6;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
   }
 
   .outputContainer {
@@ -1412,7 +1386,7 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-grow: 0;
   }
 
-  .metricHeightInputAfterText {
+  .InputAftermetricHeightText {
     font-family: "Inter";
     font-style: normal;
     font-weight: 600;
@@ -1755,7 +1729,7 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 95vw;
     position: absolute;
     justify-content: center;
-    top: 917px;
+    top: 1000px;
   }
 
   .secondSectionMainImage {
@@ -2457,7 +2431,7 @@ input[type="number"]::-webkit-outer-spin-button {
     gap: 24px;
     position: absolute;
     width: 92%;
-    height: 649px;
+    /* height: 649px; */
     left: 24px;
     top: 471px;
     background: #ffffff;
@@ -2735,7 +2709,7 @@ input[type="number"]::-webkit-outer-spin-button {
     gap: 24px;
     position: absolute;
     width: 92%;
-    height: 649px;
+    /* height: 649px; */
     left: 24px;
     top: 471px;
     background: #ffffff;
@@ -2958,7 +2932,7 @@ input[type="number"]::-webkit-outer-spin-button {
     gap: 32px;
     position: absolute;
     width: 328px;
-    height: 342px;
+    /* height: 342px; */
     left: calc(50% - 328px / 2 + 0.5px);
     margin-top: 3rem;
   }
