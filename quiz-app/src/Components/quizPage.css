@@ -461,4 +461,12 @@
     order: 0;
     flex-grow: 0;
   }
+
+  .correctOptionBox {
+    border: 1px solid green;
+  }
+
+  .incorrectOptionBox {
+    border: 1px solid red;
+  }
 }
