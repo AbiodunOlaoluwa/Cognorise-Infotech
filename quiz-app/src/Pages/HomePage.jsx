@@ -4,7 +4,7 @@ import "./home.css"
 
 const HomePage = (props) => {
     return (
-        <div className="homeContainer">
+        <div className="pageContainer">
             <div className="firstCurve"></div>
             <div className="secondCurve"></div>
             <div className="mainContent">
