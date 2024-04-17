@@ -49,13 +49,11 @@ const ScorePage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="submitContainer">
-                    <div className="submitTextContainer" onClick={handlePlayAgainClick}>
-                        <p className="submitText">
-                            Play Again
-                        </p>
-                    </div>
-                </div>
+                <button className="submitContainer submitTextContainer" onClick={handlePlayAgainClick}>
+                <p className="submitText">
+                  Play Again
+                </p>
+              </button>
             </div>
         </div>
     </div>

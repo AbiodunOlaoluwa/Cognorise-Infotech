@@ -311,6 +311,14 @@ body {
     flex-grow: 0;
   }
 
+  .optionBox:hover {
+    border: #a729f5;
+  }
+
+  .optionBox:focus {
+    outline: 1px solid #a729f5;
+  }
+
   .optionBoxText {
     font-family: "Rubik";
     font-style: normal;

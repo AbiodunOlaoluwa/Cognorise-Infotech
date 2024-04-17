@@ -67,13 +67,8 @@ const QuizPage = () => {
 
     const currentQuestion = questions[currentQuestionIndex];
 
-    let optionBoxClassNames = Array(currentQuestion.options.length).fill("optionBox");
-
-    const handleAnswerSelect = (option, index) => {
+    const handleAnswerSelect = (option,index) => {
       setSelectedAnswer(option);
-      const newClassNames = [...optionBoxClassNames];
-      newClassNames[index] = option === currentQuestion.answer ? "optionBox correctOptionBox" : "optionBox incorrectOptionBox";
-      optionBoxClassNames = newClassNames;
     }
 
     const navigateToScorePage = () => {
@@ -132,28 +127,25 @@ const QuizPage = () => {
           <div className="answerOptionsContainer">
             <div className="optionsContainer">
             {currentQuestion.options.map((option, index) => (
-              <div className={optionBoxClassNames[index]} key={index} onClick={() => {
-                handleAnswerSelect(option, index)
+              <div tabIndex={0} className="optionBox option" key={index} onClick={() => {
+                handleAnswerSelect(option)
               }}>
                 <p className="optionBoxText">{option}</p>
               </div>
             ))
               }
-              { optionSelected ? <div className="submitContainer">
-                <div className="submitTextContainer" onClick={handleNextQuestionClick}>
-                  <p className="submitText">
-                    Next Question
-                  </p>
-                </div>
-              </div>
+              { optionSelected ? 
+              <button className="submitContainer submitTextContainer" onClick={handleNextQuestionClick}>
+              <p className="submitText">
+                Next Question
+              </p>
+            </button>
               :
-              <div className="submitContainer">
-                <div className="submitTextContainer" onClick={handleSubmitClick}>
-                  <p className="submitText">
-                    Submit Answer
-                  </p>
-                </div>
-              </div>
+              <button className="submitContainer submitTextContainer" onClick={handleSubmitClick}>
+                <p className="submitText">
+                  Submit Answer
+                </p>
+              </button>
               }
               </div>
           </div>

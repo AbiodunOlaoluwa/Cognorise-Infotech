@@ -469,4 +469,20 @@
   .incorrectOptionBox {
     border: 1px solid red;
   }
+
+  .option {
+    margin: 1rem 1rem 0 1rem;
+  }
+
+  .option:hover {
+    background-color: rgba(167, 41, 245, 0.25);
+  }
+
+  .option:active p {
+    color: #a729f5;
+  }
+
+  .option:focus {
+    outline: 1px solid #a729f5;
+  }
 }
